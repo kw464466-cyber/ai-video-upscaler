@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Video Upscaler</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f7f3eb;
+    color:#263238;
+}
+
+.container{
+    max-width:700px;
+    margin:auto;
+    padding:35px 20px;
+}
+
+h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#687176;
+    font-size:18px;
+    line-height:1.6;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:25px;
+    margin-top:30px;
+    box-shadow:0 4px 20px #00000012;
+}
+
+.upload{
+    border:2px dashed #c9b78f;
+    border-radius:20px;
+    padding:45px 15px;
+    text-align:center;
+}
+
+.upload input{
+    margin-top:20px;
+}
+
+.buttons{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+button{
+    flex:1;
+    padding:16px;
+    border:0;
+    border-radius:14px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.k4{
+    background:#d49a3a;
+    color:white;
+}
+
+.k8{
+    background:#343434;
+    color:white;
+}
+
+#status{
+    text-align:center;
+    margin-top:20px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Make every frame better.</h1>
+
+<p class="subtitle">
+Turn ordinary footage into cleaner, sharper,
+export-ready video.
+</p>
+
+<div class="card">
+
+<h2>01 / SOURCE</h2>
+
+<div class="upload">
+
+<h2>Choose a video clip</h2>
+
+<p>MP4, MOV, MKV</p>
+
+<input
+type="file"
+id="video"
+accept="video/*">
+
+</div>
+
+<h2>02 / OUTPUT</h2>
+
+<div class="buttons">
+
+<button class="k4" onclick="processVideo('4K')">
+🔥 4K UHD
+</button>
+
+<button class="k8" onclick="processVideo('8K')">
+🚀 8K
+</button>
+
+</div>
+
+<p id="status"></p>
+
+</div>
+
+</div>is 
+
+<script>
+
+function processVideo(quality){
+
+    const file =
+    document.getElementById("video").files[0];
+
+    if(!file){
+
+        document.getElementById("status").innerText =
+        "⚠️ پہلے video select کریں۔";
+
+        return;
+    }
+
+    document.getElementById("status").innerText =
+    "⏳ " + quality + " AI processing شروع ہو رہی ہے...";
+
+}
+
+</script>
+
+</body>
+</html>
